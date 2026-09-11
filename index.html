@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clara Bennett Book Marketing — strategic book marketing, Amazon optimization, Goodreads growth, author branding, launch campaigns and sales-focused visibility for authors." />
+  <meta name="theme-color" content="#24172f" />
+  <title>Clara Bennett | Book Marketing & Author Growth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#24172f;
+      --plum:#3b2254;
+      --coral:#e97962;
+      --coral-dark:#c95745;
+      --cream:#fff9f1;
+      --paper:#fffdf9;
+      --lavender:#eee4f5;
+      --sage:#dfe9dc;
+      --gold:#d6a85f;
+      --muted:#6d6473;
+      --line:rgba(36,23,47,.12);
+      --shadow:0 24px 70px rgba(36,23,47,.12);
+      --radius:28px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;object-fit:cover}
+    button,input,textarea{font:inherit}
+    .container{width:min(var(--max),92%);margin:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+      color:var(--coral-dark);
+    }
+    .eyebrow:before{content:"";width:30px;height:2px;background:var(--coral)}
+    h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.08}
+    h2{font-size:clamp(2.3rem,5vw,4.4rem);letter-spacing:-.035em}
+    p{color:var(--muted)}
+
+    /* Announcement */
+    .topbar{
+      background:var(--ink);color:#fff;padding:11px 0;font-size:.82rem;
+    }
+    .topbar .container{display:flex;justify-content:center;gap:18px;align-items:center;text-align:center}
+    .topbar strong{color:#ffd6c9}
+    .topbar a{text-decoration:underline;text-underline-offset:3px}
+
+    /* Navigation */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,253,249,.92);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand-mark{
+      width:43px;height:43px;border-radius:50%;display:grid;place-items:center;
+      color:#fff;background:var(--coral);font-family:"Playfair Display",serif;font-size:1.15rem;
+      box-shadow:0 8px 22px rgba(233,121,98,.3)
+    }
+    .brand-name{font-family:"Playfair Display",serif;font-size:1.2rem}
+    .brand-name span{display:block;font-family:"DM Sans";font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:-3px}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:.9rem;font-weight:600}
+    .nav-links a{position:relative}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--coral);transition:.25s}
+    .nav-links a:hover:after{width:100%}
+    .nav-cta{background:var(--ink);color:#fff;padding:12px 19px;border-radius:999px}
+    .nav-cta:hover{background:var(--plum)}
+    .menu{display:none;border:0;background:none;font-size:1.5rem;color:var(--ink)}
+
+    /* Hero */
+    .hero{
+      position:relative;min-height:calc(100vh - 125px);display:grid;align-items:center;
+      padding:82px 0 95px;overflow:hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(233,121,98,.22), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(214,168,95,.12), transparent 28%),
+        var(--cream);
+    }
+    .hero:before{
+      content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(59,34,84,.12);
+      border-radius:50%;right:-250px;top:-170px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:70px;align-items:center;position:relative}
+    .hero-copy{max-width:650px}
+    .hero h1{font-size:clamp(3.5rem,7.5vw,7rem);margin:22px 0 28px;letter-spacing:-.055em}
+    .hero h1 em{color:var(--coral);font-style:normal}
+    .hero-lead{font-size:1.15rem;max-width:610px;margin-bottom:35px}
+    .actions{display:flex;flex-wrap:wrap;gap:13px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border-radius:999px;padding:15px 23px;font-weight:700;border:1px solid transparent;
+      transition:.25s;cursor:pointer
+    }
+    .btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 28px rgba(233,121,98,.24)}
+    .btn-primary:hover{background:var(--coral-dark);transform:translateY(-2px)}
+    .btn-secondary{border-color:var(--line);background:#fff;color:var(--ink)}
+    .btn-secondary:hover{border-color:var(--ink);transform:translateY(-2px)}
+    .hero-note{display:flex;align-items:center;gap:11px;margin-top:27px;font-size:.83rem;color:var(--muted)}
+    .dot{width:8px;height:8px;border-radius:50%;background:#63a25e;box-shadow:0 0 0 6px rgba(99,162,94,.12)}
+
+    .hero-visual{position:relative;min-height:590px}
+    .hero-photo{
+      width:78%;height:520px;border-radius:180px 180px 24px 24px;
+      margin-left:auto;box-shadow:var(--shadow);border:9px solid #fff;
+    }
+    .hero-card{
+      position:absolute;left:0;bottom:28px;width:250px;background:#fff;border-radius:22px;
+      padding:22px;box-shadow:var(--shadow);border:1px solid var(--line)
+    }
+    .hero-card .number{font-family:"Playfair Display";font-size:2.5rem;color:var(--coral)}
+    .hero-card strong{display:block;font-size:.9rem;margin-top:2px}
+    .hero-card small{color:var(--muted)}
+    .scribble{
+      position:absolute;right:0;bottom:-6px;color:var(--plum);font-family:"Playfair Display";font-size:1rem;
+      transform:rotate(-8deg)
+    }
+
+    /* Trust strip */
+    .trust{padding:22px 0;background:var(--ink);color:#fff}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .trust-item{padding:9px 18px;border-right:1px solid rgba(255,255,255,.14)}
+    .trust-item:last-child{border:0}
+    .trust-item strong{display:block;color:#fff;font-size:.92rem}
+    .trust-item span{font-size:.78rem;color:#cfc6d5}
+
+    /* Intro */
+    section{padding:115px 0}
+    .split{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+    .sticky{position:sticky;top:125px}
+    .section-title{margin:18px 0 23px}
+    .section-copy{font-size:1.05rem;max-width:650px}
+    .mini-signature{
+      margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+      display:flex;align-items:center;gap:13px
+    }
+    .mini-signature .circle{width:48px;height:48px;border-radius:50%;background:var(--lavender);display:grid;place-items:center;font-family:"Playfair Display"}
+    .mini-signature strong{font-family:"Playfair Display";font-size:1.05rem}
+    .mini-signature small{display:block;color:var(--muted)}
+
+    /* Services */
+    .services{background:var(--lavender)}
+    .services-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:50px}
+    .services-head p{max-width:490px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{
+      background:#fff;padding:30px;border-radius:24px;min-height:265px;border:1px solid rgba(59,34,84,.08);
+      transition:.3s;position:relative;overflow:hidden
+    }
+    .service:before{content:"";position:absolute;right:-35px;top:-45px;width:120px;height:120px;border-radius:50%;background:var(--cream)}
+    .service:hover{transform:translateY(-7px);box-shadow:0 18px 50px rgba(59,34,84,.11)}
+    .service-num{font-family:"Playfair Display";font-size:1.05rem;color:var(--coral)}
+    .service h3{font-size:1.55rem;margin:25px 0 11px;position:relative}
+    .service p{font-size:.91rem}
+    .service ul{margin-top:17px;padding-left:17px;color:var(--muted);font-size:.84rem}
+    .service li{margin:4px 0}
+
+    /* Featured visual */
+    .feature{background:var(--cream)}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .image-tile{border-radius:28px;overflow:hidden;position:relative;min-height:430px}
+    .image-tile img{height:100%;transition:transform .7s}
+    .image-tile:hover img{transform:scale(1.035)}
+    .image-tile .caption{
+      position:absolute;left:22px;right:22px;bottom:22px;background:rgba(36,23,47,.88);color:#fff;
+      padding:18px 20px;border-radius:18px;backdrop-filter:blur(9px)
+    }
+    .image-tile .caption strong{display:block;font-family:"Playfair Display";font-size:1.25rem}
+    .image-tile .caption span{font-size:.78rem;color:#ddd4e0}
+    .side-tiles{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+    .side-tiles .image-tile{min-height:205px}
+
+    /* Process */
+    .process{background:#fff}
+    .process-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+    .process-list{border-top:1px solid var(--line)}
+    .process-row{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .process-row .num{font-family:"Playfair Display";font-size:1.6rem;color:var(--coral)}
+    .process-row h3{font-size:1.55rem;margin-bottom:7px}
+    .process-row p{font-size:.9rem}
+
+    /* Results */
+    .results{background:var(--ink);color:#fff}
+    .results p{color:#cfc6d5}
+    .results .eyebrow{color:#ffc5b9}
+    .results .eyebrow:before{background:var(--coral)}
+    .results-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+    .result-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .result-card{padding:27px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.04)}
+    .result-card strong{font-family:"Playfair Display";font-size:2.5rem;color:#ffd0c5;display:block}
+    .result-card span{font-size:.85rem;color:#d7cfdb}
+    .result-note{margin-top:20px;font-size:.78rem;color:#aaa0af}
+
+    /* Testimonials */
+    .testimonials{background:var(--sage)}
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .quote{
+      background:#fff;padding:30px;border-radius:24px;display:flex;flex-direction:column;min-height:310px;
+      box-shadow:0 12px 35px rgba(36,23,47,.06)
+    }
+    .stars{letter-spacing:3px;color:var(--gold);font-size:.9rem}
+    .quote blockquote{font-family:"Playfair Display";font-size:1.35rem;line-height:1.35;margin:23px 0}
+    .quote cite{margin-top:auto;font-style:normal;font-weight:700;font-size:.86rem}
+    .quote cite span{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:center}
+    .portrait-wrap{position:relative}
+    .portrait{height:600px;border-radius:28px 160px 28px 28px;box-shadow:var(--shadow)}
+    .portrait-tag{
+      position:absolute;bottom:25px;right:-18px;background:var(--coral);color:#fff;
+      padding:18px 22px;border-radius:18px;max-width:205px;box-shadow:0 14px 35px rgba(233,121,98,.28)
+    }
+    .portrait-tag strong{font-family:"Playfair Display";display:block;font-size:1.2rem}
+    .about-copy h2{margin:16px 0 24px}
+    .about-copy p + p{margin-top:17px}
+    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+    .about-point{padding:15px 17px;border:1px solid var(--line);border-radius:16px;background:var(--cream);font-weight:600;font-size:.84rem}
+    .about-point:before{content:"✓";color:var(--coral);font-weight:800;margin-right:8px}
+
+    /* Contact */
+    .contact{background:var(--cream)}
+    .contact-box{
+      display:grid;grid-template-columns:.82fr 1.18fr;gap:45px;background:var(--plum);color:#fff;
+      border-radius:34px;padding:65px;overflow:hidden;position:relative
+    }
+    .contact-box:after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-150px;top:-170px}
+    .contact-box p{color:#d9d0de}
+    .contact-copy h2{margin:15px 0 19px;color:#fff}
+    .contact-details{margin-top:30px;display:grid;gap:13px}
+    .contact-details a{display:flex;gap:12px;align-items:center;font-size:.9rem}
+    .contact-details a:hover{color:#ffd0c5}
+    form{position:relative;z-index:2;background:#fff;border-radius:24px;padding:27px;color:var(--ink)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label{font-size:.74rem;font-weight:700;display:block;margin-bottom:6px}
+    input,textarea,select{
+      width:100%;border:1px solid var(--line);background:#fffaf5;padding:13px 14px;border-radius:12px;
+      outline:none;color:var(--ink);transition:.2s
+    }
+    input:focus,textarea:focus,select:focus{border-color:var(--coral);box-shadow:0 0 0 3px rgba(233,121,98,.1)}
+    .field{margin-bottom:14px}
+    textarea{min-height:125px;resize:vertical}
+    .form-note{font-size:.7rem;color:var(--muted);margin-top:11px}
+    .submit{width:100%;border:0;margin-top:3px}
+
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line);padding:20px 0}
+    summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";font-size:1.3rem;color:var(--coral)}
+    details[open] summary:after{content:"−"}
+    details p{padding-top:12px;font-size:.9rem}
+
+    /* Footer */
+    footer{background:#17101f;color:#fff;padding:60px 0 25px}
+    .footer-top{display:flex;justify-content:space-between;gap:40px;align-items:start;padding-bottom:45px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .footer-brand p{max-width:390px;color:#aaa0af;margin-top:14px;font-size:.87rem}
+    .footer-links{display:flex;gap:45px}
+    .footer-col strong{display:block;margin-bottom:13px}
+    .footer-col a{display:block;color:#aaa0af;font-size:.83rem;margin:8px 0}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:22px;color:#8e8495;font-size:.73rem}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:950px){
+      .nav-links{display:none}.menu{display:block}
+      .hero-grid,.split,.process-grid,.results-grid,.about-grid,.faq-grid,.contact-box{grid-template-columns:1fr;gap:45px}
+      .hero{padding-top:60px}.hero-visual{min-height:500px}
+      .hero-photo{width:80%;height:470px}
+      .sticky{position:static}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .quote-grid{grid-template-columns:1fr}
+      .quote{min-height:230px}
+      .contact-box{padding:40px 28px}
+      .footer-top{flex-direction:column}
+    }
+    @media(max-width:620px){
+      section{padding:80px 0}
+      .topbar{font-size:.7rem}
+      nav{min-height:72px}
+      .hero h1{font-size:3.55rem}
+      .hero-visual{min-height:430px}
+      .hero-photo{height:410px;width:87%;border-radius:130px 130px 20px 20px}
+      .hero-card{width:210px;padding:17px;bottom:4px}
+      .hero-card .number{font-size:2rem}
+      .services-head{display:block}
+      .services-head p{margin-top:20px}
+      .service-grid,.feature-grid,.about-points,.result-cards,.form-row{grid-template-columns:1fr}
+      .image-tile{min-height:350px}.side-tiles .image-tile{min-height:250px}
+      .portrait{height:480px;border-radius:24px 100px 24px 24px}
+      .portrait-tag{right:10px}
+      .footer-links{flex-wrap:wrap;gap:28px}
+      .footer-bottom{flex-direction:column}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span><strong>Clara Bennett Book Marketing</strong> · Strategic visibility for authors</span>
+      <a href="#contact">Start a conversation →</a>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="#top" aria-label="Clara Bennett home">
+        <span class="brand-mark">C</span>
+        <span class="brand-name">Clara Bennett<span>Book Marketing</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Approach</a>
+        <a href="#results">Growth</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Work With Clara</a>
+      </div>
+      <button class="menu" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
+    </nav>
+    <div id="mobileNav" style="display:none;padding:0 4% 20px;background:#fffdf9">
+      <a href="#services" onclick="toggleMenu()">Services</a><br><br>
+      <a href="#process" onclick="toggleMenu()">Approach</a><br><br>
+      <a href="#results" onclick="toggleMenu()">Growth</a><br><br>
+      <a href="#about" onclick="toggleMenu()">About</a><br><br>
+      <a href="#contact" onclick="toggleMenu()">Work With Clara</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Dallas, Texas · Author Growth</span>
+          <h1>Make your book <em>impossible to overlook.</em></h1>
+          <p class="hero-lead">
+            I help authors turn great books into discoverable, credible and commercially stronger book brands —
+            with thoughtful marketing built around visibility, reader trust, Amazon performance, Goodreads,
+            launch strategy and long-term sales.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Let’s Grow Your Book ↗</a>
+            <a class="btn btn-secondary" href="#services">Explore Services</a>
+          </div>
+          <div class="hero-note"><span class="dot"></span> Personalized strategy · Author-focused execution · Sales-minded marketing</div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <img class="hero-photo"
+               src="clara-bennett.jpg"
+               alt="Clara Bennett">
+          <div class="hero-card">
+            <div class="number">360°</div>
+            <strong>Book marketing thinking</strong>
+            <small>From positioning and discoverability to reader action and sales.</small>
+          </div>
+          <div class="scribble">Your book deserves a strategy, not a guess.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>Amazon Optimization</strong><span>Listings, keywords, categories & conversion</span></div>
+        <div class="trust-item"><strong>Goodreads Visibility</strong><span>Reader discovery, positioning & engagement</span></div>
+        <div class="trust-item"><strong>Launch Strategy</strong><span>Campaign planning from pre-launch to momentum</span></div>
+        <div class="trust-item"><strong>Sales Growth</strong><span>Marketing built with commercial goals in mind</span></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container split">
+        <div class="sticky reveal">
+          <span class="eyebrow">More than promotion</span>
+          <h2 class="section-title">Your book needs a <em>business-minded</em> marketing plan.</h2>
+        </div>
+        <div class="reveal">
+          <p class="section-copy">
+            Publishing a book is only the beginning. The real challenge is helping the right readers discover it,
+            understand why it matters and feel confident enough to click, buy, read and recommend it.
+          </p>
+          <p class="section-copy" style="margin-top:20px">
+            Clara Bennett Book Marketing brings together author positioning, marketplace optimization, reader
+            discovery, campaign strategy and sales-focused thinking in one polished approach. Instead of treating
+            every book the same, I look at your genre, audience, promise, competitive landscape and goals — then
+            build a marketing direction around them.
+          </p>
+          <div class="mini-signature">
+            <div class="circle">CB</div>
+            <div><strong>Clara Bennett</strong><small>Book Marketing · Dallas, Texas</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-head reveal">
+          <div>
+            <span class="eyebrow">The full marketing desk</span>
+            <h2 style="margin-top:15px">Services built around <em>visibility + sales.</em></h2>
+          </div>
+          <p>From the storefront readers see to the strategy behind the scenes, every piece should work together.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service reveal">
+            <span class="service-num">01 / Amazon</span>
+            <h3>Amazon Optimization</h3>
+            <p>Make your book easier to discover and easier to understand on one of the world's biggest book marketplaces.</p>
+            <ul><li>Book description positioning</li><li>Keywords & category strategy</li><li>Author and product-page refinement</li><li>Conversion-minded presentation</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">02 / Goodreads</span>
+            <h3>Goodreads Growth</h3>
+            <p>Build a stronger reader-facing presence and create more opportunities for your book to enter conversations.</p>
+            <ul><li>Profile and book-page strategy</li><li>Reader discovery opportunities</li><li>Engagement direction</li><li>Campaign support</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">03 / Launch</span>
+            <h3>Book Launch Campaigns</h3>
+            <p>Turn launch day into a coordinated campaign rather than a single announcement that disappears overnight.</p>
+            <ul><li>Pre-launch planning</li><li>Launch messaging</li><li>Promotional calendar</li><li>Post-launch momentum</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">04 / Sales</span>
+            <h3>Sales & Visibility Strategy</h3>
+            <p>Connect attention to action with campaigns designed around discoverability, reader intent and commercial goals.</p>
+            <ul><li>Sales-focused campaign ideas</li><li>Reader journey mapping</li><li>Promotion opportunities</li><li>Performance review</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">05 / Author Brand</span>
+            <h3>Author Positioning</h3>
+            <p>Create a professional author presence that makes readers, partners and industry contacts understand what you stand for.</p>
+            <ul><li>Author messaging</li><li>Brand positioning</li><li>Bio and profile direction</li><li>Online presence strategy</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">06 / Content</span>
+            <h3>Marketing Content</h3>
+            <p>Give your book a library of marketing assets that can keep the conversation moving across channels.</p>
+            <ul><li>Social content direction</li><li>Campaign copy</li><li>Reader-facing messaging</li><li>Promotional concepts</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">07 / Research</span>
+            <h3>Market & Audience Research</h3>
+            <p>Understand who the book is for, what they respond to and where your positioning can become clearer.</p>
+            <ul><li>Audience discovery</li><li>Genre positioning</li><li>Competitive observation</li><li>Reader motivation</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">08 / Promotion</span>
+            <h3>Promotional Planning</h3>
+            <p>Build a practical promotional rhythm around your book rather than relying on one-off posts or random discounts.</p>
+            <ul><li>Campaign calendars</li><li>Promotion concepts</li><li>Seasonal opportunities</li><li>Momentum planning</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-num">09 / Strategy</span>
+            <h3>Marketing Consultation</h3>
+            <p>A focused strategic session for authors who want expert direction before investing time, money or attention.</p>
+            <ul><li>Marketing audit</li><li>Priority roadmap</li><li>Next-step recommendations</li><li>Practical action plan</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="container">
+        <div class="services-head reveal">
+          <div>
+            <span class="eyebrow">The visual side of publishing</span>
+            <h2 style="margin-top:15px">A book brand should <em>look as considered</em> as the writing.</h2>
+          </div>
+          <p>Strong marketing is not only about words. It is also about the feeling readers get when they encounter your book.</p>
+        </div>
+
+        <div class="feature-grid reveal">
+          <div class="image-tile">
+            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=85" alt="Open book on a table">
+            <div class="caption"><strong>Reader-first presentation</strong><span>Position the story, promise and experience clearly.</span></div>
+          </div>
+          <div class="side-tiles">
+            <div class="image-tile">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=85" alt="Stack of books">
+              <div class="caption"><strong>Discoverability</strong><span>Help the right audience find the right book.</span></div>
+            </div>
+            <div class="image-tile">
+              <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=85" alt="Bookshelves">
+              <div class="caption"><strong>Long-term momentum</strong><span>Think beyond launch day and build repeatable visibility.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container process-grid">
+        <div class="sticky reveal">
+          <span class="eyebrow">How I work</span>
+          <h2 style="margin-top:15px">Strategy first. <em>Noise last.</em></h2>
+          <p style="margin-top:22px;max-width:450px">
+            Every book is different. My process is designed to uncover what makes yours worth noticing,
+            then turn that insight into a clear marketing system.
+          </p>
+        </div>
+        <div class="process-list reveal">
+          <div class="process-row"><div class="num">01</div><div><h3>Discover</h3><p>We clarify your book, audience, genre, goals, current presence and the biggest opportunities in front of you.</p></div></div>
+          <div class="process-row"><div class="num">02</div><div><h3>Position</h3><p>We sharpen the message so a potential reader can quickly understand what the book offers and why it is for them.</p></div></div>
+          <div class="process-row"><div class="num">03</div><div><h3>Optimize</h3><p>We refine important discovery and conversion points, including Amazon, Goodreads and your broader author presence.</p></div></div>
+          <div class="process-row"><div class="num">04</div><div><h3>Activate</h3><p>We turn the strategy into campaigns, content, promotional opportunities and reader-facing activity.</p></div></div>
+          <div class="process-row"><div class="num">05</div><div><h3>Build Momentum</h3><p>We review what is working, identify new opportunities and keep your marketing moving beyond the initial launch.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="container results-grid">
+        <div class="reveal">
+          <span class="eyebrow">What the strategy is built to improve</span>
+          <h2 style="margin:18px 0 22px;color:#fff">Attention is good. <em style="color:#ffc5b9">Action is better.</em></h2>
+          <p>
+            Marketing should create a path from seeing your book to understanding it, trusting it and taking the next step.
+            That can mean a stronger product page, more qualified discovery, better launch coordination, clearer positioning
+            or a healthier sales conversation around the book.
+          </p>
+          <p style="margin-top:17px">The goal is not vanity metrics. The goal is a stronger book business.</p>
+          <div class="result-note">*Results vary by book, genre, audience, offer, budget, market conditions and execution. No specific sales result is guaranteed.</div>
+        </div>
+        <div class="result-cards reveal">
+          <div class="result-card"><strong>01</strong><span>Clearer positioning</span></div>
+          <div class="result-card"><strong>02</strong><span>Stronger discoverability</span></div>
+          <div class="result-card"><strong>03</strong><span>Better reader journey</span></div>
+          <div class="result-card"><strong>04</strong><span>More coordinated promotion</span></div>
+          <div class="result-card"><strong>05</strong><span>Sales-minded campaigns</span></div>
+          <div class="result-card"><strong>06</strong><span>Long-term author visibility</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="services-head reveal">
+          <div>
+            <span class="eyebrow">The experience</span>
+            <h2 style="margin-top:15px">Professional, thoughtful, <em>personal.</em></h2>
+          </div>
+          <p>Marketing works better when an author feels heard, informed and confident about the plan.</p>
+        </div>
+
+        <div class="quote-grid">
+          <article class="quote reveal"><div class="stars">★★★★★</div><blockquote>“Clara brings strategy to the parts of publishing that can feel overwhelming. Everything becomes much clearer.”</blockquote><cite>Author Client<span>Independent author</span></cite></article>
+          <article class="quote reveal"><div class="stars">★★★★★</div><blockquote>“The biggest difference was having one marketing direction instead of trying ten disconnected ideas at once.”</blockquote><cite>Author Client<span>Fiction & contemporary literature</span></cite></article>
+          <article class="quote reveal"><div class="stars">★★★★★</div><blockquote>“Professional, organized and genuinely focused on making the book easier for readers to discover.”</blockquote><cite>Author Client<span>Nonfiction author</span></cite></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="portrait-wrap reveal">
+          <img class="portrait" src="clara-bennett.jpg" alt="Clara Bennett">
+          <div class="portrait-tag"><strong>Clara Bennett</strong>Book marketing from Dallas, Texas — working with authors who want their books taken seriously.</div>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">Meet Clara</span>
+          <h2>Marketing that treats the <em>book</em> as a brand.</h2>
+          <p>
+            I believe authors deserve more than a generic checklist. Your book has a particular audience, a particular
+            promise and a particular reason someone should care. My job is to help bring those pieces into focus and
+            turn them into marketing people can actually respond to.
+          </p>
+          <p>
+            From Amazon optimization and Goodreads strategy to author positioning, launch campaigns, promotional planning,
+            reader discovery and sales-focused marketing, I help connect the dots so your book can show up with confidence.
+          </p>
+          <div class="about-points">
+            <div class="about-point">Personalized marketing direction</div>
+            <div class="about-point">Amazon & marketplace thinking</div>
+            <div class="about-point">Goodreads & reader discovery</div>
+            <div class="about-point">Launch & campaign planning</div>
+            <div class="about-point">Sales-focused strategy</div>
+            <div class="about-point">Long-term visibility planning</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-copy reveal">
+            <span class="eyebrow">Let’s talk about your book</span>
+            <h2>Ready to give your book a <em style="color:#ffc5b9">bigger strategy?</em></h2>
+            <p>
+              Tell me about your book, where you are in the publishing journey and what you want to accomplish.
+              You do not need to have everything figured out before you reach out.
+            </p>
+            <div class="contact-details">
+              <a href="mailto:clarabennettmed123@gmail.com">✉ <span>clarabennettmed123@gmail.com</span></a>
+              <a href="https://www.tiktok.com/@clara.bennett57" target="_blank" rel="noopener">♪ <span>@clara.bennett57 on TikTok</span></a>
+              <span>⌖ <span>Dallas, Texas, United States</span></span>
+            </div>
+          </div>
+
+          <form class="reveal" onsubmit="sendEmail(event)">
+            <div class="form-row">
+              <div class="field"><label for="name">Your name</label><input id="name" required placeholder="Your name"></div>
+              <div class="field"><label for="email">Your email</label><input id="email" type="email" required placeholder="you@example.com"></div>
+            </div>
+            <div class="field">
+              <label for="service">What can I help with?</label>
+              <select id="service">
+                <option>Amazon optimization</option>
+                <option>Goodreads strategy</option>
+                <option>Book launch campaign</option>
+                <option>Sales & visibility strategy</option>
+                <option>Author brand & positioning</option>
+                <option>Marketing consultation</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">Tell me about your book</label><textarea id="message" required placeholder="Book title, genre, current stage, your goals, and anything else you'd like me to know..."></textarea></div>
+            <button class="btn btn-primary submit" type="submit">Send Message to Clara ↗</button>
+            <div class="form-note">This button opens your email app with the message prepared for Clara. No server is required for GitHub Pages.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container faq-grid">
+        <div class="sticky reveal">
+          <span class="eyebrow">Questions authors ask</span>
+          <h2 style="margin-top:15px">Before we <em>begin.</em></h2>
+          <p style="margin-top:20px">A little clarity before the first conversation can make the process much easier.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details open><summary>Do I need to have a finished book?</summary><p>No. Marketing can begin at different stages. Early strategy can help with positioning, audience, launch planning and building a stronger foundation before publication.</p></details>
+          <details><summary>Can you help with Amazon?</summary><p>Yes. Amazon optimization can include product-page messaging, keywords, categories, author positioning and other discoverability and conversion considerations.</p></details>
+          <details><summary>Do you work with Goodreads?</summary><p>Yes. Goodreads can be part of a broader reader-discovery strategy, alongside other channels and promotional opportunities that make sense for your book.</p></details>
+          <details><summary>Is your work only for new releases?</summary><p>No. A backlist title can also benefit from a refreshed position, improved presentation, new promotional angles or a renewed visibility plan.</p></details>
+          <details><summary>Will you guarantee a specific number of sales?</summary><p>No responsible marketer can guarantee a particular sales figure. The focus is on building stronger positioning, discoverability, campaigns and reader pathways that support commercial growth.</p></details>
+          <details><summary>How do I get started?</summary><p>Use the contact form above or email directly. Share your book details, your current stage and what you want to achieve. We can then determine the most useful next step.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <span class="brand-mark">C</span>
+            <span class="brand-name" style="color:#fff">Clara Bennett<span style="color:#aaa0af">Book Marketing</span></span>
+          </a>
+          <p>Strategic book marketing for authors who want stronger visibility, clearer positioning and a smarter path from discovery to reader action.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><strong>Explore</strong><a href="#services">Services</a><a href="#process">Approach</a><a href="#results">Growth</a><a href="#about">About Clara</a></div>
+          <div class="footer-col"><strong>Connect</strong><a href="#contact">Contact</a><a href="mailto:clarabennettmed123@gmail.com">Email Clara</a><a href="https://www.tiktok.com/@clara.bennett57" target="_blank" rel="noopener">TikTok</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Clara Bennett Book Marketing. All rights reserved.</span>
+        <span>Dallas, Texas · United States</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const nav = document.getElementById('mobileNav');
+      nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function sendEmail(event){
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Book Marketing Inquiry — ' + name);
+      const body = encodeURIComponent(
+        'Hello Clara,%0A%0A' +
+        'My name is ' + name + ' (' + email + ').%0A' +
+        'I am interested in: ' + service + '.%0A%0A' +
+        message + '%0A%0AThank you.'
+      );
+      window.location.href = 'mailto:clarabennettmed123@gmail.com?subject=' + subject + '&body=' + body;
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
